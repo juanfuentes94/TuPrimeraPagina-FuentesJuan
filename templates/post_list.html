@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>All Posts</h2>
+
+<form method="GET" action="">
+  <input type="text" name="q" placeholder="Search by title...">
+  <button type="submit">Search</button>
+</form>
+
+{% if no_results %}
+  <p>{{ no_results }}</p>
+{% else %}
+  <ul>
+    {% for post in posts %}
+      <li>
+        <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a> 
+        - Created: {{ post.created_at }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<a href="{% url 'post_create' %}">Create a New Post</a>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ post.title }}</h2>
+<p>{{ post.description }}</p>
+<p>Quantity: {{ post.quantity }}</p>
+{% if post.image %}
+  <img src="{{ post.image.url }}" alt="Post image" style="max-width:200px;">
+{% endif %}
+<p>Created at: {{ post.created_at }}</p>
+
+<a href="{% url 'post_update' post.pk %}">Edit</a> |
+<a href="{% url 'post_delete' post.pk %}">Delete</a>
+{% endblock %}
