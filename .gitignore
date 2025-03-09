@@ -1,0 +1,33 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+*.egg-info/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Django / general project files
+db.sqlite3
+*.log
+
+# Environment variables / secrets
+.env
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Coverage / test reports
+.coverage
+htmlcov/
+coverage.xml
+.junit.xml
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
